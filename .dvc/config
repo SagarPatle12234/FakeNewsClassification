@@ -2,3 +2,5 @@
     remote = myremote
 ['remote "myremote"']
     url = gdrive://1SX-ZShU0qOzy6HSsv3lLHrBw8Cs_7UUR
+['remote "origin"']
+    url = s3://dvc
