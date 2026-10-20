@@ -1,6 +1,7 @@
 [core]
-    remote = myremote
+    remote = origin
 ['remote "myremote"']
     url = gdrive://1SX-ZShU0qOzy6HSsv3lLHrBw8Cs_7UUR
 ['remote "origin"']
     url = s3://dvc
+    endpointurl = https://dagshub.com/SagarPatle12234/FakeNewsClassification.s3

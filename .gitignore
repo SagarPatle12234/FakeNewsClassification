@@ -1,2 +1,2 @@
 data/WELFake_Dataset.csv
-credentials/gdrive-credentials.json
+.env
