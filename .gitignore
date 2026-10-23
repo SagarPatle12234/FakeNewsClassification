@@ -2,3 +2,4 @@ data/WELFake_Dataset.csv
 .env
 /chroma_db
 ".env" 
+/.vscode

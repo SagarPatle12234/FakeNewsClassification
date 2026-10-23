@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ai NEWS Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🕵️‍♂️ Ai  NEWS Detector</h1>
+            <p>CRAG Architecture: Local DB (Tier 1) ➔ Live Web Search (Tier 2)</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="claimInput" placeholder="Enter a news claim or headline (e.g., 'The Eiffel Tower was destroyed today')"></textarea>
+                <button id="analyzeBtn">Analyze Claim</button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing claim across local and live sources...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="hidden">
+                <h2 id="verdictTitle"></h2>
+                <div class="badge" id="tierBadge"></div>
+                
+                <div class="report-box">
+                    <h3>Summary</h3>
+                    <p id="summaryText"></p>
+                    
+                    <h3>Explanation</h3>
+                    <p id="explanationText"></p>
+                    
+                    <h3>Sources</h3>
+                    <ul id="sourcesList"></ul>
+                </div>
+            </div>
+            
+            <!-- Error Section -->
+            <div id="errorBox" class="hidden error"></div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
