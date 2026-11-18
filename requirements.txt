@@ -1,6 +1,7 @@
 Flask
 python-dotenv
-langchain-huggingface
+fastembed
+langchain-community
 langchain-pinecone
 pinecone-client
 langchain-google-genai

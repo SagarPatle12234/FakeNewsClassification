@@ -1,19 +1,17 @@
 import os
-from langchain_huggingface import HuggingFaceEndpointEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_tavily import TavilySearch
 
-# Fetch your tokens
+# Fetch your API keys
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
-hf_token = os.environ.get("HF_TOKEN")
 
-# Use the cloud API instead of local PyTorch
-embeddings = HuggingFaceEndpointEmbeddings(
-    model="sentence-transformers/all-MiniLM-L6-v2",
-    huggingfacehub_api_token=hf_token
+# Run the model locally using FastEmbed's highly optimized ONNX runtime (No API key needed)
+embeddings = FastEmbedEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 vector_store = PineconeVectorStore(
