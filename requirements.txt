@@ -137,3 +137,9 @@ Werkzeug==3.1.9
 xxhash==4.1.0
 yarl==1.25.1
 zstandard==0.25.0
+dvc
+<<<<<<< Updated upstream
+dvc-s3
+=======
+dvc-s3
+>>>>>>> Stashed changes
