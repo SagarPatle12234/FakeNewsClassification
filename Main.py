@@ -1,18 +1,20 @@
 import os
-
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_tavily import TavilySearch
 
-# --- 1. Connect to Pinecone Cloud DB ---
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
+# Fetch your tokens
 pinecone_api_key = os.environ.get("PINECONE_API_KEY")
-if not pinecone_api_key:
-    raise ValueError("PINECONE_API_KEY not found in environment.")
+hf_token = os.environ.get("HF_TOKEN")
+
+# Use the cloud API instead of local PyTorch
+embeddings = HuggingFaceEndpointEmbeddings(
+    model="sentence-transformers/all-MiniLM-L6-v2",
+    huggingfacehub_api_token=hf_token
+)
 
 vector_store = PineconeVectorStore(
     index_name="real-news-facts", 
