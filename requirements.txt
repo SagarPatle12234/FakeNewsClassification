@@ -3,13 +3,11 @@ torch
 Flask
 python-dotenv
 langchain-huggingface
-langchain-chroma
+langchain-pinecone
+pinecone-client
 langchain-google-genai
 langchain-core
 langchain-tavily
 pandas
-chromadb
 gunicorn
-dvc
-dvc-s3
 sentence-transformers
